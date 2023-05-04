@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BoardsDialogComponent } from './boards-dialog/boards-dialog.component';
+import { BoardService } from '../services/board.service';
 
 @Component({
   selector: 'app-boards',
@@ -9,17 +10,34 @@ import { BoardsDialogComponent } from './boards-dialog/boards-dialog.component';
 })
 export class BoardsComponent {
 
-
+  public boards: Board[] = [];
 
   constructor(
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private _boardService: BoardService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getBoards();
+  }
 
   openNewBoardDialog() {
     const dialogRef = this.matDialog.open(BoardsDialogComponent, {
-      width:'500px',
+      width: '500px',
     });
   }
+
+  getBoards() {
+    this.boards = this._boardService.getBoards();
+    console.log(this.boards);
+  }
+
+  deleteBoard(i:number) {
+    this._boardService.deleteBoard(i);
+  }
+
+}
+
+interface Board {
+  title: string;
 }
