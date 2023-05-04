@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { BoardsDialogComponent } from './boards-dialog/boards-dialog.component';
 
 @Component({
   selector: 'app-boards',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class BoardsComponent {
 
+
+
+  constructor(
+    private matDialog: MatDialog
+  ) { }
+
+  ngOnInit(): void { }
+
+  openNewBoardDialog() {
+    const dialogRef = this.matDialog.open(BoardsDialogComponent, {
+      width:'500px',
+    });
+  }
 }
