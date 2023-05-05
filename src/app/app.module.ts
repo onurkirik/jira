@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { BoardsComponent } from './boards/boards.component';
 import { BoardsDialogComponent } from './boards/boards-dialog/boards-dialog.component';
 import { ViewBoardComponent } from './view-board/view-board.component';
+import { ViewBoardDialogComponent } from './view-board/view-board-dialog/view-board-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ViewBoardComponent } from './view-board/view-board.component';
     HeaderComponent,
     BoardsComponent,
     BoardsDialogComponent,
-    ViewBoardComponent
+    ViewBoardComponent,
+    ViewBoardDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { ViewBoardComponent } from './view-board/view-board.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
