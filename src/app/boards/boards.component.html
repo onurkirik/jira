@@ -1,9 +1,15 @@
 <div style="display: flex; justify-content: center; margin: 30px 0px;">
     <button mat-raised-button color="accent" (click)="openNewBoardDialog()">Yeni Board Ekle</button>
 </div>
-<div *ngFor="let board of boards; let i = index">
-    {{board.title}}
-    <button mat-icon-button (click)="deleteBoard(i)">
-        <mat-icon>delete</mat-icon>
-    </button>
+<div style="display: flex; justify-content: space-between; background-color: yellow; margin: 10px 30px; align-items: center; padding: 0px 20px;"
+    *ngFor="let board of boards; let i = index" 
+    [routerLink]="'/view-board/' + i">
+    <div>
+        {{board.title}}
+    </div>
+    <div>
+        <button mat-icon-button (click)="deleteBoard(i)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
 </div>

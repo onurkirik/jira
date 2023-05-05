@@ -21,6 +21,7 @@ constructor(
 
 create() {
     this._boardService.createBoard(this.boardForm.get('title')?.value);
+    this._dialogRef.close();
 }
 
 close() {

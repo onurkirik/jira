@@ -14,13 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { BoardsComponent } from './boards/boards.component';
 import { BoardsDialogComponent } from './boards/boards-dialog/boards-dialog.component';
+import { ViewBoardComponent } from './view-board/view-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BoardsComponent,
-    BoardsDialogComponent
+    BoardsDialogComponent,
+    ViewBoardComponent
   ],
   imports: [
     BrowserModule,
